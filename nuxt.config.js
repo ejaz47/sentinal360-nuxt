@@ -1,10 +1,13 @@
+import { resolve } from 'path';
+const fsExtra = require('fs-extra');
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'sentinal360-nuxt',
+    title: 'sentinal360',
     htmlAttrs: {
       lang: 'en'
     },
@@ -46,6 +49,16 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  hooks: {
+    generate: {
+      done(builder) {
+        console.log('Copying to docs folder after build...');
+        fsExtra.copySync(resolve(__dirname, './php'), resolve(__dirname, './dist/php'));
+        // fsExtra.copySync('./dist', './docs');
+      }
+    }
   },
 
   googleFonts: {
