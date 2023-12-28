@@ -54,7 +54,7 @@ export default {
   hooks: {
     generate: {
       done(builder) {
-        console.log('Copying to docs folder after build...');
+        console.log('Copying to php folder after build...');
         fsExtra.copySync(resolve(__dirname, './php'), resolve(__dirname, './dist/php'));
         // fsExtra.copySync('./dist', './docs');
       }
