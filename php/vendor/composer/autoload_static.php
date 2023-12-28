@@ -15,6 +15,10 @@ class ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6
         array (
             'Slim\\' => 5,
         ),
+        'R' => 
+        array (
+            'Respect\\Validation\\' => 19,
+        ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
@@ -30,6 +34,10 @@ class ComposerStaticInit43c43a01c7335350cbbdbb77a20f1ce6
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
+        ),
+        'Respect\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/respect/validation/library',
         ),
         'Psr\\Http\\Message\\' => 
         array (

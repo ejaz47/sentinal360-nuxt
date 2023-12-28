@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Slim\\' => array($vendorDir . '/slim/slim/Slim'),
+    'Respect\\Validation\\' => array($vendorDir . '/respect/validation/library'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'FastRoute\\' => array($vendorDir . '/nikic/fast-route/src'),
