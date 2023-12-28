@@ -28,18 +28,18 @@ async function deploy() {
     // Add your build commands here...
 
      // Check if the build branch already exists
-     const branches = await git.branchLocal();
-     const buildBranchExists = branches.branches[targetBranch] !== undefined;
- 
-     if (!buildBranchExists) {
-       // Create the build branch if it doesn't exist
-       console.log(`Creating and switching to branch: ${targetBranch}`);
-       await git.checkoutLocalBranch(targetBranch);
-     } else {
-       // Switch to the existing build branch
-       console.log(`Switching to existing branch: ${targetBranch}`);
-       await git.checkout(targetBranch);
-     }
+    const branches = await git.branchLocal();
+    const buildBranchExists = branches.branches[targetBranch] !== undefined;
+
+    if (!buildBranchExists) {
+      // Create the build branch if it doesn't exist
+      console.log(`Creating and switching to branch: ${targetBranch}`);
+      await git.checkoutLocalBranch(targetBranch);
+    } else {
+      // Switch to the existing build branch
+      console.log(`Switching to existing branch: ${targetBranch}`);
+      await git.checkout(targetBranch);
+    }
 
     // Remove all existing files in the build branch
     console.log('Removing existing files in the build branch...');
@@ -48,7 +48,7 @@ async function deploy() {
 
     // Add the .gitignore file to the build branch
     console.log('Adding .gitignore to the build branch...');
-    await git.add('.gitignore');
+    await git.add(path.join('./', '.gitignore'));
     
     // Add the contents of the .dist/ directory to the build branch
     const distFiles = fs.readdirSync(distDirectory);
