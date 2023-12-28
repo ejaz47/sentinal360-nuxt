@@ -38,16 +38,15 @@ async function deploy() {
 
     // Add the .gitignore file to the build branch
     console.log('Adding .gitignore to the build branch...');
-    git.add('.gitignore');
+    await git.add('.gitignore');
     
     // Add the contents of the .dist/ directory to the build branch
-    console.log('Adding .dist/ contents to the build branch...');
     const distFiles = fs.readdirSync(distDirectory);
-    distFiles.forEach((file) => {
-      const filePath = path.join(distDirectory, file);
-      const targetPath = path.relative(distDirectory, filePath);
-      git.add(targetPath);
-    });
+    await Promise.all(distFiles.map(async (file) => {
+        const filePath = path.join(distDirectory, file);
+        const targetPath = path.relative(distDirectory, filePath);
+        await git.add(targetPath);
+    }));
 
     // Commit the changes
     console.log('Committing changes...');
