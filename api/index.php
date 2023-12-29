@@ -1,6 +1,6 @@
 <?php
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 // Include the RateLimitMiddleware class
 require 'Middleware/RateLimitMiddleware.php';
