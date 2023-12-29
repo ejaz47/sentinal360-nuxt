@@ -64,8 +64,10 @@ export default {
     }
   },
 
-  router: {
-    base: '/sentinal360/'
+  ...process.env.NODE_ENV !== 'dev' && {
+    router: {
+      base: '/sentinal360/'
+    }
   },
 
   googleFonts: {
