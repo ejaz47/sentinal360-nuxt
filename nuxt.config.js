@@ -66,6 +66,7 @@ export default {
   },
 
   googleFonts: {
+    base64: true,
     families: {
       Jost: true, // Add the Jost font
     },
