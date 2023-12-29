@@ -12,11 +12,13 @@
   },
   "dependencies": {
     "core-js": "^3.25.3",
+    "jquery": "^3.7.1",
     "nuxt": "^2.15.8",
     "nuxt-buefy": "^0.4.24",
     "vue": "^2.7.10",
     "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "vue-template-compiler": "^2.7.10",
+    "vue-tiny-slider": "^0.1.39"
   },
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.1.3",

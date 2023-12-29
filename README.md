@@ -10,6 +10,7 @@ $ yarn install
 $ yarn dev
 
 # PHP serve at localhost:8081
+$ composer install
 $ docker-compose up
 ```
 ## Build Setup
