@@ -17,7 +17,6 @@
     </div>
     <div class="container mt-5" style="max-width: 1200px; overflow: hidden">
       <div class="carousel">
-        <client-only>
         <vue-tiny-slider v-bind="tinySliderOptions">
           <div v-for="(offer, index) in offers" :key="index">
             <div>
@@ -56,7 +55,6 @@
             </div>
           </div>
         </vue-tiny-slider>
-        </client-only>
         <div id="customize-controls">
           <div v-for="(offer, index) in offers" :key="index"></div>
         </div>

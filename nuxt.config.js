@@ -50,7 +50,6 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    publicPath: './CDN/'
   },
 
   hooks: {
@@ -63,6 +62,10 @@ export default {
         // fsExtra.copySync('./dist', './docs');
       }
     }
+  },
+
+  router: {
+    base: '/sentinal360/'
   },
 
   googleFonts: {
