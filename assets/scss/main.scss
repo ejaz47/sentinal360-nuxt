@@ -46,13 +46,16 @@ body {
         font-size: inherit;
         width: 100%;
         padding: 50px;
-        padding-bottom: 0px;
+        padding-top: 0px;
         background: #FFFFFF;
     }
     .tns-nav-active {
         span.icon {
             color: red !important;
         }
+    }
+    .icon-text {
+        flex-wrap: nowrap;
     }
 }
 
@@ -76,8 +79,8 @@ body {
     justify-content: center;
     padding: 20px;
     background-color: #fff;
-    span {
-        font-size: 0.8rem;
+    .button {
+        // font-size: 0.8rem;
         margin: auto 10px;
         color: $primary-bg;
         &.tns-nav-active {

@@ -70,8 +70,7 @@
     </div>
     <Carousel></Carousel>
     <contact-form></contact-form>
-    <!-- <include>_carousel-offer.html</include>
-    <include>_form.html</include> -->
+    <page-footer />
   </div>
 </template>
 
@@ -79,6 +78,7 @@
 import Header from "~/components/Header";
 import Carousel from "~/components/Carousel";
 import Form from "~/components/Form";
+import Footer from "~/components/Footer";
 import $ from "jquery";
 // import { tns } from 'tiny-slider/src/tiny-slider';
 
@@ -88,6 +88,7 @@ export default {
     HeaderNav: Header,
     Carousel,
     ContactForm: Form,
+    PageFooter: Footer,
   },
   mounted () {
     $(document).ready(function(){
@@ -102,18 +103,7 @@ export default {
         //     navContainer: "#customize-thumbnails",
         // });
         
-        $('a[href*="#"]:not([href="#"]):not([href="#show"]):not([href="#hide"])').click(function() {
-            if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top - 100
-                    }, 1000);
-                    return false;
-                }
-            }
-        });
+        
     });
   }
 };
