@@ -54,8 +54,10 @@ export default {
   hooks: {
     generate: {
       done(builder) {
-        console.log('Copying to php folder after build...');
-        fsExtra.copySync(resolve(__dirname, './php'), resolve(__dirname, './dist/php'));
+        console.log('Copying to api folder after build...');
+        fsExtra.copySync(resolve(__dirname, './api'), resolve(__dirname, './dist/api'));
+        fsExtra.copySync(resolve(__dirname, './composer.json'), resolve(__dirname, './dist/composer.json'));
+        fsExtra.copySync(resolve(__dirname, './composer.lock'), resolve(__dirname, './dist/composer.lock'));
         // fsExtra.copySync('./dist', './docs');
       }
     }

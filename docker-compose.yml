@@ -18,9 +18,9 @@ services:
     ports:
       - "8081:80"
     volumes:
-      - ./php:/var/www/html
-      - ./php/php.local.ini:/usr/local/etc/php/php.ini
-      - ./php/apache-configs:/etc/apache2/sites-available
+      - ./:/var/www/html
+      - ./api/php.local.ini:/usr/local/etc/php/php.ini
+      - ./api/apache-configs:/etc/apache2/sites-available
     command: ["bash", "-c", "a2enmod rewrite && docker-php-ext-install pdo pdo_mysql && apache2-foreground"]
 
   mysql:

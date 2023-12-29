@@ -1,5 +1,17 @@
-# sentinal360-nuxt
+# PHP-NUXT boilerplate
 
+## Local Development
+
+```bash
+# install dependencies
+$ yarn install
+
+# UI serve with hot reload at localhost:3000
+$ yarn dev
+
+# PHP serve at localhost:8081
+$ docker-compose up
+```
 ## Build Setup
 
 ```bash
@@ -15,6 +27,15 @@ $ yarn start
 
 # generate static project
 $ yarn generate
+```
+## Publish
+
+```bash
+# install dependencies
+$ yarn install
+
+# generate and publish to build branch
+$ yarn publish-git
 ```
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
@@ -67,3 +88,7 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+
+### `dist`
+
+This directory contains your output. with composer files and api folder 

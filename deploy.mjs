@@ -19,9 +19,9 @@ const commitDate = datetime.toISOString().slice(0,10);
   shell.cp('-R', `./${buildFolder}/.`, `./${temporaryFolder}/`);
 
   shell.cd(`./${temporaryFolder}`);
-  await $`git add .`;
   if ((await $`git ls-files --others -d -m`).stdout.trim()) {
-    await $`git commit -m "Local Publish ${commitDate}"`;
+    await $`git add .`;
+    await $`git commit -m "LocalPublish${commitDate}"`;
     await $`git push origin ${branchDeploy}`;
     console.log('Publlished successfully!');
   } else { console.log('No changes to publish'); }
