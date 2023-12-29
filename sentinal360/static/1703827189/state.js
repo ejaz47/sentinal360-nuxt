@@ -1,1 +1,0 @@
-window.__NUXT__=(function(a,b){return {staticAssetsBase:"\u002Fsentinal360\u002Fstatic\u002F1703827189",layout:"default",error:a,serverRendered:true,routePath:b,config:{_app:{basePath:b,assetsPath:"\u002Fsentinal360\u002F",cdnURL:a}}}}(null,"\u002F"));
