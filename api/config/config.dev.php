@@ -8,4 +8,5 @@ return [
         'password' => 'password',
         'database' => 'sentinal360',
     ],
+    'CORS_URL' => "*"
 ];
