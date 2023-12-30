@@ -9,16 +9,20 @@ require 'helper.php';
 use Slim\Http\Request;
 use Slim\Http\Response;
 
+
 $app = new \Slim\App();
 
-$app->get('/test', function ($request, $response, $args) {
-    $response->getBody()->write("Hello". getenv("DB_HOST"));
+$env = $_SERVER["SERVER_NAME"] == "localhost" ? 'dev' : 'prod';
+$config = loadConfig($env);
 
-    return $response;
+$app->get('/test', function ($request, $response, $args) use ($config) {
+    // $response->getBody()->write("Hello". $);
+
+    return $response->withJson($config);
 });
 
 // Define the route for the POST method
-$app->post('/insertData', function (Request $request, Response $response) {
+$app->post('/insertData', function (Request $request, Response $response) use ($config){
 
     // Get data from the request body
     $data = $request->getParsedBody();

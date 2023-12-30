@@ -36,7 +36,9 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ['@nuxtjs/google-fonts'],
+  buildModules: [
+    '@nuxtjs/google-fonts',
+  ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
@@ -45,7 +47,8 @@ export default {
       css: false,
       materialDesignIcons: true,
       materialDesignIconsHRef: "https://cdn.jsdelivr.net/npm/@mdi/font@5.8.55/css/materialdesignicons.min.css"
-    }]
+    }],
+    '@nuxtjs/axios'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -55,6 +58,9 @@ export default {
   hooks: {
     generate: {
       done(builder) {
+        console.log("node-env ", process.env.NODE_ENV);
+        console.log("node-env ", process.env.API_BASE_URL);
+        console.log("base-path ", process.env.ROUTER_BASE_PATH)
         console.log('Copying to api folder after build...');
         fsExtra.copySync(resolve(__dirname, './api'), resolve(__dirname, './dist/api'));
         fsExtra.copySync(resolve(__dirname, './composer.json'), resolve(__dirname, './dist/composer.json'));
@@ -64,10 +70,8 @@ export default {
     }
   },
 
-  ...process.env.NODE_ENV !== 'dev' && {
-    router: {
-      base: '/sentinal360/'
-    }
+  router: {
+    base: process.env.ROUTER_BASE_PATH || "/"
   },
 
   googleFonts: {
@@ -75,5 +79,9 @@ export default {
     families: {
       Jost: true, // Add the Jost font
     },
-  }
+  },
+
+  axios: {
+    proxy: process.env.API_BASE_URL || "/"
+  },
 }
