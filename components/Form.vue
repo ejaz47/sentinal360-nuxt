@@ -15,37 +15,33 @@
       </div>
     </div>
     <div class="container mt-5 box" style="max-width: 800px">
-      <div class="field is-horizontal">
-        <div class="field-body">
-          <div class="field">
-            <label class="label">Name</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Full Name" />
-            </div>
-          </div>
-          <div class="field">
-            <label class="label">Title</label>
-            <div class="control">
-              <input class="input" type="text" placeholder="Your Title" />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Email</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="john@example.com" />
-        </div>
-      </div>
-      <div class="field">
-        <label class="label">Company</label>
-        <div class="control">
-          <input class="input" type="text" placeholder="Company Name" />
-        </div>
-      </div>
+      <b-field grouped>
+        <b-field label="Name" expanded
+          :type="{ 'is-danger': formData.name.error.length }"
+          :message="formData.name.error || ''">
+            <b-input v-model="formData.name.value"></b-input>
+        </b-field>
+        <b-field label="Title" expanded
+          :type="{ 'is-danger': formData.title.error.length }"
+          :message="formData.title.error || ''">
+            <b-input v-model="formData.title.value"></b-input>
+        </b-field>
+      </b-field>  
+      <b-field
+        label="Email"
+        :type="{ 'is-danger': formData.email.error.length }"
+        :message="formData.email.error || ''">
+          <b-input type="email" v-model="formData.email.value">
+          </b-input>
+      </b-field>
+      <b-field label="Company"
+        :type="{ 'is-danger': formData.company.error.length }"
+        :message="formData.company.error || ''">
+          <b-input v-model="formData.company.value"></b-input>
+      </b-field>
       <div class="field mt-6 mb-3">
         <div class="control">
-          <button class="button is-primary">Send</button>
+          <b-button type="is-primary" :loading="loading" :disabled="loading" @click="onSendClick">Send</b-button>
         </div>
       </div>
     </div>
@@ -56,6 +52,127 @@
 export default {
   name: "Form",
   props: {},
+  data () {
+    return {
+      loading: false,
+      hasError: false,
+      formData: {
+        name: {
+          value: "",
+          error: [],
+          validate: {
+            required: true,
+            maxLength: 100
+          }
+        },
+        title: {
+          value: "",
+          error: [],
+          validate: {
+            required: true,
+            maxLength: 50
+          }
+        },
+        email: {
+          value: "",
+          error: [],
+          validate: {
+            required: true,
+            maxLength: 100,
+            email: true
+          }
+        },
+        company: {
+          value: "",
+          error: [],
+          validate: {
+            required: true,
+            maxLength: 100
+          }
+        },
+      }
+    }
+  },
+  methods: {
+    onSendClick () {
+      this.validate();
+      if (!this.hasError) {
+        const payload = {};
+        Object.keys(this.formData).forEach(key => {
+          payload[key] = this.formData[key].value;
+        });
+        this.postData(payload);
+        console.log(payload);
+      }
+    },
+    clearForm () {
+      this.hasError = false;
+      this.loading = false;
+      for (const key in this.formData) {
+        const field = this.formData[key];
+        field.value = "";
+        field.error = [];
+      }
+    },
+    async postData(payload) {
+      try {
+        this.loading = true;
+        // Make the POST request
+        const response = await this.$axios.post("/insertData", payload);
+
+        this.loading = false;
+        // Handle the response
+        // console.log('Response:', response.data);
+        this.$buefy.dialog.alert({
+          title: 'Thank You!',
+          message: "We've received your details and are on it! Expect to hear from us soon.",
+          confirmText: 'ok'
+        });
+        this.clearForm();
+      } catch (error) {
+        // Handle errors
+        this.$buefy.notification.open({
+          duration: 5000,
+          message: `Something went wrong!`,
+          position: 'is-bottom-right',
+          type: 'is-danger',
+          hasIcon: true
+        });
+        // setTimeout(() => {
+          this.loading = false
+        // }, 2000);
+      }
+    },
+    validate() {
+      this.hasError = false;
+      for (const key in this.formData) {
+        const field = this.formData[key];
+        field.error = [];
+
+        if (field.validate.required && !field.value.trim()) {
+          field.error.push("This field is required.");
+        }
+
+        if (
+          field.validate.maxLength &&
+          field.value.length > field.validate.maxLength
+        ) {
+          field.error.push(
+            `Maximum length is ${field.validate.maxLength} characters.`
+          );
+        }
+
+        if (
+          field.validate.email &&
+          !/^\S+@\S+\.\S+$/.test(field.value)
+        ) {
+          field.error.push("Invalid email address.");
+        }
+
+        this.hasError = this.hasError || field.error.length ? true : false
+      }
+    }
+  }
 };
 </script>
 

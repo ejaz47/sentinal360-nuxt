@@ -1,29 +1,6 @@
 <template>
   <footer class="footer">
     <div class="container">
-      <!-- <div class="content">
-                <p>Made with <b-icon icon="favorite" type="is-danger"></b-icon> by <a href="https://twitter.com/rafaelpimpa" target="_blank">Rafael Beraldo</a>.</p>
-                <p>
-                    <small>
-                        The source code is licensed under <a href="http://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>.
-                        <br>
-                        The website content is licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC ANS 4.0</a>.
-                    </small>
-                </p>
-
-                <b-field>
-                    <p class="control">
-                        <a class="button" href="https://github.com/rafaelpimpa/buefy" target="_blank">
-                            <b-icon pack="fa" icon="github"></b-icon> <span>GitHub</span>
-                        </a>
-                    </p>
-                    <p class="control">
-                        <a class="button is-twitter" href="https://twitter.com/rafaelpimpa" target="_blank">
-                            <b-icon pack="fa" icon="twitter"></b-icon> <span>Twitter</span>
-                        </a>
-                    </p>
-                </b-field>
-            </div> -->
       <div class="columns has-text-white">
         <div class="column is-4">
           <div style="filter: invert(1); margin-left: -5px" class="mb-4">
@@ -37,7 +14,7 @@
             Keep your organization safe from cyber attacks with our proven and
             effective breach prevention strategies.
           </p>
-          <div class="subs-content mt-5">
+          <!-- <div class="subs-content mt-5">
             <form class="subscription">
               <input class="add-email" type="email" placeholder="subscribe@me.now">
               <button class="submit-email" type="button">
@@ -45,14 +22,14 @@
                 <span class="after-submit">Thank you for subscribing!</span>
               </button>
             </form>
-          </div>
+          </div> -->
         </div>
         <div class="column" style="text-align:right;">
           <div class="columns">
             <div class="column is-6">
               <p class="is-size-5">Costa Mesa, CA (Corporate)</p>
               <b-button
-                class="has-text-link-light pb-1"
+                class="has-text-link-light pb-1 pr-0"
                 type="is-ghost"
                 tag="a"
                 icon-left="email"
@@ -60,7 +37,7 @@
                 info@sentinel360.io
               </b-button>
               <b-button
-                class="has-text-link-light pb-1"
+                class="has-text-link-light pb-1 pr-0"
                 type="is-ghost"
                 tag="a"
                 icon-left="phone"
@@ -71,7 +48,7 @@
             <div class="column is-6">
               <p class="is-size-5">Costa Mesa, CA (Corporate)</p>
               <b-button
-                class="has-text-link-light pb-1"
+                class="has-text-link-light pb-1 pr-0"
                 type="is-ghost"
                 tag="a"
                 icon-left="email"
@@ -79,7 +56,7 @@
                 info@sentinel360.io
               </b-button>
               <b-button
-                class="has-text-link-light pb-1"
+                class="has-text-link-light pb-1 pr-0"
                 type="is-ghost"
                 tag="a"
                 icon-left="phone"

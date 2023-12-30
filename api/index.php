@@ -15,6 +15,23 @@ $app = new \Slim\App();
 $env = $_SERVER["SERVER_NAME"] == "localhost" ? 'dev' : 'prod';
 $config = loadConfig($env);
 
+// CORS Setup
+if ($config["CORS_URL"]) {
+    $app->options('/{routes:.+}', function ($request, $response, $args) {
+        return $response;
+    });
+    
+    $app->add(function ($req, $res, $next) {
+        global $config;
+        $response = $next($req, $res);
+        return $response
+                ->withHeader('Access-Control-Allow-Origin', $config["CORS_URL"])
+                ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
+                ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+    });
+}
+
+
 $app->get('/test', function ($request, $response, $args) {
     // $response->getBody()->write("Hello". $);
     global $config;

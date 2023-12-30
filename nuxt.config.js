@@ -82,6 +82,6 @@ export default {
   },
 
   axios: {
-    proxy: process.env.API_BASE_URL || "/"
+    baseURL: process.env.API_BASE_URL || "/"
   },
 }
