@@ -15,9 +15,9 @@ $app = new \Slim\App();
 $env = $_SERVER["SERVER_NAME"] == "localhost" ? 'dev' : 'prod';
 $config = loadConfig($env);
 
-$app->get('/test', function ($request, $response, $args) use ($config) {
+$app->get('/test', function ($request, $response, $args) {
     // $response->getBody()->write("Hello". $);
-
+    global $config;
     return $response->withJson($config);
 });
 
@@ -72,7 +72,8 @@ function validateData($data)
 // Function to insert data into the table
 function insertDataIntoTable($data)
 {
-    $pdo = getPdoObject();
+    global $config;
+    $pdo = getPdoObject($config);
 
     // Build the SQL query
     $sql = 'INSERT INTO contacts (name, email, title, company) VALUES (:name, :email, :title, :company)';
