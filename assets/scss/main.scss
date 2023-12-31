@@ -76,13 +76,14 @@ body {
 
 #customize-thumbnails {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 20px;
     background-color: #fff;
     .button {
         // font-size: 0.8rem;
         margin: auto 10px;
-        color: $primary-bg;
+        color: #949494;
         &.tns-nav-active {
             color: $primary;
         }

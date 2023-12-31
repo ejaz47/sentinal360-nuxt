@@ -29,15 +29,15 @@
               :key="index"
             >
               <!-- <b-icon icon="circle-small" size="is-large" type="is-primary" /> -->
-              {{offer.title.split(" ")[0]}}
+              {{offer.title}}
             </b-button>
           </div>
           <vue-tiny-slider v-bind="tinySliderOptions">
             <div v-for="(offer, index) in offers" :key="index">
               <div>
-                <p class="is-size-4 has-text-primary">{{ offer.title }}</p>
+                <!-- <p class="is-size-4 has-text-primary">{{ offer.title }}</p> -->
                 <p class="is-size-5 has-text-primary has-text-weight-bold">
-                  {{ offer.name }}
+                  <span>{{ offer.name }}</span>
                 </p>
                 <p class="is-size-6 has-text-primary">
                   {{ offer.description }}
@@ -64,7 +64,20 @@
                     </template>
                   </div>
                 </div>
-                <a href="#" class="button is-primary mt-6">Buy now</a>
+                <div class="buttons mt-6">
+                <b-button type="is-success"
+                        icon-left="check-bold">
+                        Get now
+                </b-button>
+                <b-button type="is-primary"
+                        tag="a"
+                        :href="'/pdf/' + offer.pdf"
+                        download
+                        @click="onPdfDownload(offer)"
+                        icon-left="download">
+                        Download PDF
+                </b-button>
+                </div>
               </div>
             </div>
           </vue-tiny-slider>
@@ -102,8 +115,50 @@ export default {
     return {
       offers: [
         {
-          title: "$11K Value",
+          title: "Threat Protection",
+          name: "Threat Protection Engagement",
+          pdf: "Threat Protection Engagement.pdf",
+          description:
+            "Elevate your organization's security with expert guidance, tailored recommendations, and proactive threat detection, powered by Microsoft Security tools.",
+          details: [
+            {
+              title: "Phishing Attack Awareness",
+              text: "Gauge your organization's exposure to phishing attacks.",
+            },
+            {
+              title: "Customized Security Strategy",
+              text: "Develop a tailored security plan based on Microsoft expert recommendations.",
+            },
+            {
+              title: "Strategic Documentation",
+              text: "Create a documented security strategy for stakeholders.",
+            },
+            {
+              title: "Password Protocol Evaluation",
+              text: "Assess if employees are following secure password practices.",
+            },
+            {
+              title: "Immediate Threat Detection",
+              text: "Discover real-time threats in email, identity, and data.",
+            },
+            {
+              title: "Leverage Microsoft Security Tools",
+              text: "Learn to maximize the latest tools for enhanced security.",
+            },
+            {
+              title: "Data Exposure Examination",
+              text: "Identify potential personal data exposure.",
+            },
+            {
+              title: "Actionable Steps",
+              text: "Receive specific next steps for addressing vulnerabilities.",
+            },
+          ],
+        },
+        {
+          title: "Data Security",
           name: "Data Security Engagement",
+          pdf: "Data Security Overview.pdf",
           description:
             "Address data security, privacy, and compliance risks with a comprehensive assessment, insights into internal and external threats, and actionable recommendations for mitigation.",
           details: [
@@ -136,10 +191,10 @@ export default {
             },
           ],
         },
-
         {
-          title: "$10K Value",
+          title: "Microsoft Sentinel",
           name: "Microsoft Sentinel Engagement",
+          pdf: "Microsoft Sentinel Engagement.pdf",
           description:
             "Harness the power of Microsoft Sentinel, a cloud-native SIEM, to detect and prevent threats, and benefit from insights into active threats in your environment.",
           details: [
@@ -169,10 +224,10 @@ export default {
             },
           ],
         },
-
         {
-          title: "$5K Value",
+          title: "Cybersecurity",
           name: "Cybersecurity Assessment",
+          pdf: "Cybersecurity Assessment.pdf",
           description:
             "Gain insights into and mitigate prevalent threats like ransomware and insider risks, aligning your security with industry benchmarks, with guidance from Microsoft experts.",
           details: [
@@ -202,6 +257,14 @@ export default {
       tinySliderOptions: {},
     };
   },
+  methods: {
+    onPdfDownload (offer) {
+      this.$buefy.notification.open({
+        message: `Download <b>${offer.pdf}</b> is successful.`,
+        type: 'is-success'
+      });
+    }
+  }
 };
 </script>
 
