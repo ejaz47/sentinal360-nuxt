@@ -10,14 +10,15 @@
             Unleash the Full Potential of Security with Sentinel 360
           </p>
           <div>
-            <p class="is-size-6 has-text-black-bis m-0 member-of">
+            <!-- <p class="is-size-6 has-text-black-bis m-0 member-of">
               Member of Microsoft Intelligent Security Association
-            </p>
-            <img src="~assets/Microsoft-logo.png" alt="Microsoft logo" />
+            </p> -->
+            <img src="~assets/MISA.png" style="max-width: 350px; margin-left: -38px; margin-top: -35px;" alt="Microsoft" />
           </div>
         </div>
       </div>
     </div>
+    <div class="container .is-fullhd">
     <div id="services">
       <div class="columns m-4 margin-top-24">
         <div class="column p-6">
@@ -29,7 +30,6 @@
             cybersecurity service provider, certified as both a Microsoft
             Intelligent Security Association
           </p>
-          <a class="button is-primary" href="#">Secure now</a>
         </div>
         <div class="column text-center is-hidden-mobile">
           <img src="~assets/endpoint.svg" alt="">
@@ -41,32 +41,27 @@
         </div>
         <div class="column p-6">
           <p class="title is-capitalized is-size-1 has-text-primary">
-            Microsoft-specialized cybersecurity service provider
+            24/7 Security Operations Center (SOC)
           </p>
           <p class="is-size-4 has-text-primary-dark mb-5">
-            At Sentinel360, we are proud to be a Microsoft-specialized
-            cybersecurity service provider, certified as both a Microsoft
-            Intelligent Security Association
+            We operate a 24/7 Security Operations Center (SOC), offering vigilant monitoring and rapid response to threats.
           </p>
-          <a class="button is-primary" href="#">Secure now</a>
         </div>
       </div>
       <div class="columns m-4 margin-top-24">
         <div class="column p-6">
           <p class="title is-capitalized is-size-1 has-text-primary">
-            Microsoft-specialized cybersecurity service provider
+            Your Trusted Full-Service Cybersecurity Partner
           </p>
           <p class="is-size-4 has-text-primary-dark mb-5">
-            At Sentinel360, we are proud to be a Microsoft-specialized
-            cybersecurity service provider, certified as both a Microsoft
-            Intelligent Security Association
+            Our commitment extends to Governance, Risk & Compliance, Privacy Risk Management, Virtual CISO (vCISO) services, Vulnerability Management.
           </p>
-          <a class="button is-primary" href="#">Secure now</a>
         </div>
         <div class="column text-center">
           <img src="~assets/software-integration.svg" alt="">
         </div>
       </div>
+    </div>
     </div>
     <Carousel></Carousel>
     <contact-form></contact-form>
@@ -91,20 +86,6 @@ export default {
     PageFooter: Footer,
   },
   mounted () {
-    $(document).ready(function(){
-        // const slider = tns({
-        //     container: '.carousel',
-        //     items: 1,
-        //     slideBy: 'page',
-        //     autoplay: false,
-        //     autoHeight: true,
-        //     mouseDrag: true,
-        //     controlsContainer: "#customize-controls",
-        //     navContainer: "#customize-thumbnails",
-        // });
-        
-        
-    });
   }
 };
 </script>

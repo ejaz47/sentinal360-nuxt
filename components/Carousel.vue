@@ -6,12 +6,10 @@
     <div class="is-flex is-flex-direction-row is-justify-content-center">
       <div style="text-align: center; max-width: 900px" class="m-2">
         <h1 class="is-size-1 has-text-primary has-text-weight-bold">
-          Choose your Hero Offer
+          Fortify Your Defense
         </h1>
         <p class="is-size-4 has-text-primary">
-          Interested in learning more – please select the offer you are most
-          interested and provide your contact details – and we will follow up
-          with a call within 1 business day
+          Embark on a <img src="~assets/Microsoft-logo.png" style="margin-bottom: -7px" width="112"> Funded Security Journey for Robust Protection
         </p>
       </div>
     </div>

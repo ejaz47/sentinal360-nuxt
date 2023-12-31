@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'sentinal360',
+    title: 'sentinel360',
     htmlAttrs: {
       lang: 'en'
     },
