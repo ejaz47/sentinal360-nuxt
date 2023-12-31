@@ -1,7 +1,7 @@
 <template>
   <div class="has-navbar-fixed-top" style="scroll-behavior: smooth; padding-top: 85px">
     <header-nav></header-nav>
-    <div class="section pt-0 pb-0 banner">
+    <div class="section pt-0 pb-0 banner is-flex">
       <div class="columns" id="home">
         <div class="column"></div>
         <div class="column"></div>
