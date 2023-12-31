@@ -134,3 +134,9 @@ body {
 .container.always-full {
     max-width: 100% !important;
 }
+
+.footer {
+    .container {
+        max-width: 1024px !important;
+    }
+}

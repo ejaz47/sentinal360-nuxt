@@ -1,11 +1,11 @@
 <template>
   <div class="has-navbar-fixed-top" style="scroll-behavior: smooth; padding-top: 85px">
     <header-nav></header-nav>
-    <div class="section pt-0 pb-0 banner is-flex">
+    <div class="section pt-0 pb-0 banner is-flex is-justify-content-center">
       <div class="columns" id="home">
         <div class="column"></div>
         <div class="column"></div>
-        <div class="column is-two-thirds is-flex is-align-items-center">
+        <div class="column is-7 is-flex is-align-items-center">
           <div class="banner-text">
             <p class="title is-size-1 has-text-primary">
               Unleash the Full Potential of Security with Sentinel 360
