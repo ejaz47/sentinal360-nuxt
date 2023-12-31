@@ -1,4 +1,5 @@
 body {
+    // overflow-x: hidden;
     color: black;
     * {
         font-family: 'jost', sans-serif;
@@ -126,6 +127,10 @@ body {
     }
 
     .banner {
-        background-position-x: -207px;
+        background-position-x: -221px;
     }
+}
+
+.container.always-full {
+    max-width: 100% !important;
 }

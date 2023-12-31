@@ -1,19 +1,21 @@
 <template>
   <div class="has-navbar-fixed-top" style="scroll-behavior: smooth; padding-top: 85px">
     <header-nav></header-nav>
-    <div class="columns banner" id="home">
-      <div class="column"></div>
-      <div class="column"></div>
-      <div class="column is-two-thirds is-flex is-align-items-center m-4">
-        <div class="banner-text">
-          <p class="title is-size-1 has-text-primary">
-            Unleash the Full Potential of Security with Sentinel 360
-          </p>
-          <div>
-            <!-- <p class="is-size-6 has-text-black-bis m-0 member-of">
-              Member of Microsoft Intelligent Security Association
-            </p> -->
-            <img src="~assets/MISA.png" style="max-width: 350px; margin-left: -38px; margin-top: -35px;" alt="Microsoft" />
+    <div class="section pt-0 pb-0 banner">
+      <div class="columns" id="home">
+        <div class="column"></div>
+        <div class="column"></div>
+        <div class="column is-two-thirds is-flex is-align-items-center">
+          <div class="banner-text">
+            <p class="title is-size-1 has-text-primary">
+              Unleash the Full Potential of Security with Sentinel 360
+            </p>
+            <div>
+              <!-- <p class="is-size-6 has-text-black-bis m-0 member-of">
+                Member of Microsoft Intelligent Security Association
+              </p> -->
+              <img src="~assets/MISA.png" style="max-width: 350px; margin-left: -38px; margin-top: -35px;" alt="Microsoft" />
+            </div>
           </div>
         </div>
       </div>
