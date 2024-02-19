@@ -14,8 +14,27 @@
         </p>
       </div>
     </div>
-    <div class="container mt-5 box" style="max-width: 800px">
-      <b-field grouped>
+    <div class="container mt-5 box form-box" style="max-width: 800px; color: #000">
+      <div>
+        <div data-form-block-id="c09bc944-2cc1-ee11-9079-00224809c210"></div>
+        <script src="https://mktdplp102cdn.azureedge.net/public/latest/js/form-loader.js?v=1.84.2007"></script>
+        <div id="dCwyPjVHJMSy3kjAOIRsuw5-ndvt7VlsGX6qy4l4ZqLY"></div>
+        <script src="https://mktdplp102cdn.azureedge.net/public/latest/js/ws-tracking.js?v=1.84.2007"></script>
+        <div class="d365-mkt-config" style="display:none" data-website-id="CwyPjVHJMSy3kjAOIRsuw5-ndvt7VlsGX6qy4l4ZqLY" data-hostname="0290c3486659426dbca535b7323443a6.svc.dynamics.com"></div>
+      </div>
+      <style>
+        button{
+           width: auto;
+           margin-top: auto;
+           font-weight: normal;
+        }
+        .form-box button{
+           width: 100%;
+           margin-top: 12px;
+           font-weight: bold;
+        }
+      </style>
+      <!-- <b-field grouped>
         <b-field label="Name" expanded
           :type="{ 'is-danger': formData.name.error.length }"
           :message="formData.name.error || ''">
@@ -43,7 +62,7 @@
         <div class="control">
           <b-button type="is-primary" :loading="loading" :disabled="loading" @click="onSendClick">Send</b-button>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>

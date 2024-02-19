@@ -64,7 +64,7 @@
                 </div>
                 <div class="buttons mt-6">
                 <b-button type="is-success"
-                        icon-left="check-bold">
+                        icon-left="check-bold" @click="onGetNow()">
                         Get now
                 </b-button>
                 <b-button type="is-primary"
@@ -261,6 +261,12 @@ export default {
         message: `Download <b>${offer.pdf}</b> is successful.`,
         type: 'is-success'
       });
+    },
+    onGetNow () {
+      const target = $("#contact");
+      $('html,body').animate({
+          scrollTop: target.offset().top - 100
+      }, 1000);
     }
   }
 };

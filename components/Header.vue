@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar is-fixed-top p-3" style="background: transparent; backdrop-filter: blur(50px);" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-        <a class="navbar-item full-height" href="~index.html">
+        <a class="navbar-item full-height" href="index.html">
             <!-- <div class="msia"></div> -->
             <img src="~assets/Sentinel360-Logo.png" width="112">
         </a>
