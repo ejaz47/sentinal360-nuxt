@@ -113,14 +113,14 @@ export default {
     height: 46px;
 }
 .msia-2 {
-    background: url(/_nuxt/assets/MISA-2.png);
+    background: url('~assets/MISA-2.png');
     background-size: contain;
     background-position-y: 5px;
     width: 185px;
     height: 46px;
 }
 .msia-top {
-    background: url(/_nuxt/assets/MISA.png);
+    background: url('~assets/MISA.png');
     background-size: cover;
     background-position: -14px -15px;
     width: 185px;
