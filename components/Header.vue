@@ -18,11 +18,13 @@
             <!-- <img src="~assets/MISA.png" width="112"> -->
             <!-- <img src="~assets/Sentinel360-Logo.png" width="112"> -->
             <!-- <a href="#home" class="navbar-item">Home</a> -->
-            <vue-tiny-slider v-bind="tinySliderOptions">
-              <div class="msia-top"></div>
-              <div class="msia-2"></div>
-              <div class="msia-1"></div>
-            </vue-tiny-slider>
+            <client-only>
+              <vue-tiny-slider v-bind="tinySliderOptions">
+                <div class="msia-top"></div>
+                <div class="msia-2"></div>
+                <div class="msia-1"></div>
+              </vue-tiny-slider>
+            </client-only>
         </div>
     </div>
 </nav>
