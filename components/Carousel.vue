@@ -69,7 +69,7 @@
                 </b-button>
                 <b-button type="is-primary"
                         tag="a"
-                        :href="'/pdf/' + offer.pdf"
+                        :href="'./pdf/' + offer.pdf"
                         download
                         @click="onPdfDownload(offer)"
                         icon-left="download">

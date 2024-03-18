@@ -50,9 +50,16 @@ export default {
     }],
     '@nuxtjs/axios'
   ],
-
+  mode: "spa",
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    extend(config, { isDev, isClient }) {
+        if (!isDev) {
+            // relative links, please.
+            config.output.publicPath = "./_nuxt/";
+        }
+        return config;
+    }
   },
 
   hooks: {
@@ -71,7 +78,15 @@ export default {
   },
 
   router: {
-    base: process.env.ROUTER_BASE_PATH || "/"
+    // base: process.env.ROUTER_BASE_PATH || "/"
+    mode: "hash",
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '*',
+        component: resolve(__dirname, 'pages/index.vue')
+      })
+    }
   },
 
   googleFonts: {
